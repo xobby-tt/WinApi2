@@ -27,6 +27,15 @@ LRESULT CALLBACK ServeWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lPa
 		EndPaint(hWnd, &ps); // освободить контекст устройства
 		break;
 	}
+	case WM_LBUTTONDOWN: // нажатие левой кнопки манипулятора "мышь"
+						 // создаем объект и начинаем менять его размер
+	{
+		LastHole = new HOLE(ms.xPos, ms.yPos, 5); // создаем новый объект-отверстие,
+		Plate.AddHole(LastHole); // добавляем его на пластину
+		LastHole->Draw(GetWindowDC(hWnd)); // и сразу же рисуем
+		Mode = CHANGE_SIZE; // переходим в режим изменения размера объекта
+		break;
+	}
 	default:
 		return DefWindowProc(hWnd, uMsg, wParam, lParam);
 	}

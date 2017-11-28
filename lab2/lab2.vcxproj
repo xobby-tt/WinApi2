@@ -140,10 +140,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Plates.cpp" />
+    <ClCompile Include="plate.cpp" />
     <ClCompile Include="ServeWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="plate.h" />
     <ClInclude Include="Plates.h" />
     <ClInclude Include="ServeWindow.h" />
   </ItemGroup>
